@@ -117,7 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Home_Index_Message" xml:space="preserve">
-    <value>Here are our emails if you wish to contact us !</value>
+  <data name="BackToList_Label" xml:space="preserve">
+    <value>Retour à la liste</value>
+  </data>
+  <data name="Create_Label" xml:space="preserve">
+    <value>Créer</value>
+  </data>
+  <data name="DeleteConfirmation_Label" xml:space="preserve">
+    <value>Êtes-vous certain de vouloir supprimer ceci?</value>
+  </data>
+  <data name="Delete_Label" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="Details_Label" xml:space="preserve">
+    <value>Détails</value>
+  </data>
+  <data name="Edit_Label" xml:space="preserve">
+    <value>Édition</value>
+  </data>
+  <data name="Home_Label" xml:space="preserve">
+    <value>Accueil</value>
+  </data>
+  <data name="New_Label" xml:space="preserve">
+    <value>Nouveau</value>
+  </data>
+  <data name="People_Label" xml:space="preserve">
+    <value>Personnes</value>
+  </data>
+  <data name="Save_Label" xml:space="preserve">
+    <value>Sauvegarder</value>
   </data>
 </root>

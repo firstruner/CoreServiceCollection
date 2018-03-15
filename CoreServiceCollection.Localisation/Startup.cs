@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using AutoMapper;
 using CoreServiceCollection.Core.Services;
@@ -78,9 +79,9 @@ namespace CoreServiceCollection.Localisation
 
             void AddLocalizationOption(LocalizationOptions o)
             {
-                o.ResourcesPath = "Resources";
+                o.ResourcesPath = string.Empty;
             }
-        }
+        } 
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -103,8 +104,13 @@ namespace CoreServiceCollection.Localisation
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+                    name: "areas",
+                    template: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                );
+
+                routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{area=Home}/{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

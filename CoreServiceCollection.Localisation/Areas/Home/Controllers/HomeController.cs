@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
 using CoreServiceCollection.Localisation.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 
-namespace CoreServiceCollection.Localisation.Controllers
+namespace CoreServiceCollection.Localisation.Areas.Home.Controllers
 {
+    [Area("Home")]
     public class HomeController : Controller
     {
         private readonly IStringLocalizer<HomeController> _localizer;
@@ -19,7 +20,7 @@ namespace CoreServiceCollection.Localisation.Controllers
 
         public IActionResult Index()
         {
-            ViewData["Message"] = _localizer["Home_Index_Message"];
+            ViewData["Message"] = _localizer["Voici nos courriels si vous désirez nous contacter !"];
 
             return View();
         }

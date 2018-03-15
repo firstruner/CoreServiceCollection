@@ -1,19 +1,23 @@
-﻿@using Microsoft.Extensions.Localization
-@model CoreServiceCollection.Localisation.Models.PersonViewModel
+﻿@using CoreServiceCollection.Localisation
+@using CoreServiceCollection.Localisation.Areas
+@using CoreServiceCollection.Localisation.Areas.Person.Models
+@using Microsoft.Extensions.Localization
+@model PersonViewModel
 @inject IStringLocalizer<SharedResources> SharedLocalizer
 
 @{
-    ViewData["Title"] = SharedLocalizer["Nouveau"];
+    ViewData["Title"] = SharedLocalizer["Edit_Label"];
 }
 
-<h2>@SharedLocalizer["Nouveau"]</h2>
+<h2>@SharedLocalizer["Edit_Label"]</h2>
 
 <h4>PersonViewModel</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @Html.HiddenFor(model => model.Id)
             <div class="form-group">
                 <label asp-for="FirstName" class="control-label"></label>
                 <input asp-for="FirstName" class="form-control" />
@@ -35,14 +39,14 @@
                 <span asp-validation-for="AdditionalInfo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="@SharedLocalizer["Créer"]" class="btn btn-default" />
+                <input type="submit" value="@SharedLocalizer["Save_Label"]" class="btn btn-default" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">@SharedLocalizer["Retour à la liste"]</a>
+    <a asp-action="Index">@SharedLocalizer["BackToList_Label"]</a>
 </div>
 
 @section Scripts {

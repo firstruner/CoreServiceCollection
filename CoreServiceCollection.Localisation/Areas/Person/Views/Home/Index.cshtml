@@ -1,5 +1,8 @@
-﻿@using Microsoft.Extensions.Localization
-@model IEnumerable<CoreServiceCollection.Localisation.Models.PersonViewModel>
+﻿@using CoreServiceCollection.Localisation
+@using CoreServiceCollection.Localisation.Areas
+@using CoreServiceCollection.Localisation.Areas.Person.Models
+@using Microsoft.Extensions.Localization
+@model IEnumerable<PersonViewModel>
 @inject IStringLocalizer<SharedResources> SharedLocalizer
 
 @{
@@ -9,7 +12,7 @@
 <h2>Index</h2>
 
 <p>
-    <a asp-action="Create">@SharedLocalizer["Nouveau"]</a>
+    <a asp-action="Create">@SharedLocalizer["New_Label"]</a>
 </p>
 <table class="table">
     <thead>
@@ -46,9 +49,9 @@
                 @Html.DisplayFor(modelItem => item.AdditionalInfo)
             </td>
             <td>
-                @Html.ActionLink(SharedLocalizer["Édition"], "Edit", new {id = item.Id}) |
-                @Html.ActionLink(SharedLocalizer["Détails"], "Details", new {id = item.Id}) |
-                @Html.ActionLink(SharedLocalizer["Supprimer"], "Delete", new {id = item.Id})
+                @Html.ActionLink(SharedLocalizer["Edit_Label"], "Edit", new {id = item.Id}) |
+                @Html.ActionLink(SharedLocalizer["Details_Label"], "Details", new {id = item.Id}) |
+                @Html.ActionLink(SharedLocalizer["Delete_Label"], "Delete", new {id = item.Id})
             </td>
         </tr>
     }

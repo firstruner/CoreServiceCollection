@@ -19,4 +19,10 @@
     <ProjectReference Include="..\CoreServiceCollection.Core\CoreServiceCollection.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\Home\Data\" />
+    <Folder Include="Areas\Home\Models\" />
+    <Folder Include="Areas\Person\Data\" />
+  </ItemGroup>
+
 </Project>

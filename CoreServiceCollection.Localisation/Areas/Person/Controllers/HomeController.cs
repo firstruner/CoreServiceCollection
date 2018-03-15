@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using CoreServiceCollection.Core.Models;
 using CoreServiceCollection.Core.Services;
-using CoreServiceCollection.Localisation.Models;
+using CoreServiceCollection.Localisation.Areas.Person.Models;
 using Microsoft.AspNetCore.Mvc;
 using IMapper = AutoMapper.IMapper;
 
-namespace CoreServiceCollection.Localisation.Controllers
+namespace CoreServiceCollection.Localisation.Areas.Person.Controllers
 {
-    public class PersonController : Controller
+    [Area("Person")]
+    public class HomeController : Controller
     {
         private readonly IMapper _mapper;
         private readonly IPersonService _personService;
 
-        public PersonController(IMapper mapper, IPersonService personService)
+        public HomeController(IMapper mapper, IPersonService personService)
         {
             _mapper = mapper;
             _personService = personService;

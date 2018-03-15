@@ -1,4 +1,5 @@
-﻿@using Microsoft.AspNetCore.Builder
+﻿@using CoreServiceCollection.Localisation.Areas
+@using Microsoft.AspNetCore.Builder
 @using Microsoft.AspNetCore.Localization
 @using Microsoft.AspNetCore.Mvc.Localization
 @using Microsoft.Extensions.Localization
@@ -17,10 +18,10 @@
 }
 
 <div>
-    <form id="change-language" asp-controller="Home"
+    <form id="change-language" asp-area="Home" asp-controller="Home"
           asp-action="ChangeLanguage" asp-route-returnUrl="@Context.Request.Path"
           method="post" class="form-horizontal" role="form">
-        @Localizer["Langue:"] <select name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" 
+        @Localizer["LanguageSelection_Label"] <select name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" 
                                       asp-items="availableLanguages"
                                       onchange="this.form.submit();"></select>
     </form>

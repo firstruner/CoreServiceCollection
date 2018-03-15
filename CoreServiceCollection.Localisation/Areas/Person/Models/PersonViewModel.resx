@@ -117,7 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Langue:" xml:space="preserve">
-    <value>Language:</value>
+  <data name="AdditionalInfo_Display" xml:space="preserve">
+    <value>Information additionnelle</value>
+  </data>
+  <data name="Email_Display" xml:space="preserve">
+    <value>Courriel</value>
+  </data>
+  <data name="Email_InvalidMessage" xml:space="preserve">
+    <value>Le courriel n'est pas valide</value>
+  </data>
+  <data name="FirstName_Display" xml:space="preserve">
+    <value>Prénom</value>
+  </data>
+  <data name="FirstName_RequiredMessage" xml:space="preserve">
+    <value>Le prénom est requis</value>
+  </data>
+  <data name="LastName_Display" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="LastName_RequiredMessage" xml:space="preserve">
+    <value>Le nom est requis</value>
   </data>
 </root>

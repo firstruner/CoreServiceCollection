@@ -1,13 +1,17 @@
-﻿@using Microsoft.Extensions.Localization
-@model CoreServiceCollection.Localisation.Models.PersonViewModel
+﻿@using CoreServiceCollection.Localisation
+@using CoreServiceCollection.Localisation.Areas
+@using CoreServiceCollection.Localisation.Areas.Person.Models
+@using Microsoft.Extensions.Localization
+@model PersonViewModel
 @inject IStringLocalizer<SharedResources> SharedLocalizer
 
 @{
-    ViewData["Title"] = SharedLocalizer["Détails"];
+    ViewData["Title"] = SharedLocalizer["Delete_Label"];
 }
 
-<h2>@SharedLocalizer["Détails"]</h2>
+<h2>@SharedLocalizer["Delete_Label"]</h2>
 
+<h3>@SharedLocalizer["DeleteConfirmation_Label"]</h3>
 <div>
     <h4>PersonViewModel</h4>
     <hr />
@@ -38,8 +42,9 @@
             @Html.DisplayFor(model => model.AdditionalInfo)
         </dd>
     </dl>
-</div>
-<div>
-    @Html.ActionLink(SharedLocalizer["Édition"], "Edit", new { id = Model.Id }) |
-    <a asp-action="Index">@SharedLocalizer["Retour à la liste"]</a>
+
+    <form asp-action="Delete">
+        <input type="submit" value="@SharedLocalizer["Delete_Label"]" class="btn btn-default" /> |
+        <a asp-action="Index">@SharedLocalizer["BackToList_Label"]</a>
+    </form>
 </div>
