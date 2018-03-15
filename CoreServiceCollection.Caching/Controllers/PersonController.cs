@@ -1,30 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using CoreServiceCollection.Caching.Models;
 using CoreServiceCollection.Core.Models;
 using CoreServiceCollection.Core.Services;
-using CoreServiceCollection.Localisation.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 using IMapper = AutoMapper.IMapper;
 
-namespace CoreServiceCollection.Localisation.Controllers
+namespace CoreServiceCollection.Caching.Controllers
 {
     public class PersonController : Controller
     {
         private readonly IMapper _mapper;
         private readonly IPersonService _personService;
+        private readonly IMemoryCache _memoryCache;
 
-        public PersonController(IMapper mapper, IPersonService personService)
+        public PersonController(IMapper mapper, IPersonService personService, IMemoryCache memoryCache)
         {
             _mapper = mapper;
             _personService = personService;
+            _memoryCache = memoryCache;
         }
 
         // GET: Person
         public ActionResult Index()
         {
             var persons = _mapper.Map<IList<PersonViewModel>>(_personService.Persons);
+            persons.ToList().ForEach(p => { _memoryCache.Set(p.Id, p); });
 
+            return View(persons);
+        }
+
+        public ActionResult Cached()
+        {
+            
+            var persons = _mapper.Map<IList<PersonViewModel>>(_personService.Persons);
+            persons.ToList().ForEach(p => { _memoryCache.Set(p.Id.ToString(), p); });
+
+            
+            
             return View(persons);
         }
 

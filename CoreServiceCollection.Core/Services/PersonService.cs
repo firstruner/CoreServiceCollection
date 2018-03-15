@@ -1,23 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using CoreServiceCollection.Localisation.Models;
+using CoreServiceCollection.Core.Models;
 
-namespace CoreServiceCollection.Localisation.Services
+namespace CoreServiceCollection.Core.Services
 {
     public class PersonService : IPersonService
     {
         public PersonService()
         {
-            Persons = new List<PersonViewModel>()
+            Persons = new List<PersonModel>()
             {
-                new PersonViewModel()
+                new PersonModel()
                 {
                     Id = Guid.NewGuid(),
                     FirstName = "Bruno",
                     LastName = "Barrette",
-                    Email = "bruno@bracketshow.com"
+                    Email = "bruno@bracketshow.com",
+                    AdditionalInfo = "test"
                 },
-                new PersonViewModel()
+                new PersonModel()
                 {
                     Id = Guid.NewGuid(),
                     FirstName = "Éric",
@@ -27,6 +28,6 @@ namespace CoreServiceCollection.Localisation.Services
             };
         }
 
-        public IList<PersonViewModel> Persons { get; set; }
+        public IList<PersonModel> Persons { get; set; }
     }
 }

@@ -1,0 +1,45 @@
+﻿@model CoreServiceCollection.Caching.Models.PersonViewModel
+
+@{
+    ViewData["Title"] = "Supprimer";
+}
+
+<h2>Supprimer</h2>
+
+<h3>Êtes-vous certain de vouloir supprimer ceci?</h3>
+<div>
+    <h4>PersonViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @Html.HiddenFor(model => model.Id)
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AdditionalInfo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AdditionalInfo)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="submit" value="Supprimer" class="btn btn-default" /> |
+        <a asp-action="Index">Retour à la liste</a>
+    </form>
+</div>

@@ -1,0 +1,43 @@
+﻿@model CoreServiceCollection.Caching.Models.PersonViewModel
+
+@{
+    ViewData["Title"] = "Détails";
+}
+
+<h2>Détails</h2>
+
+<div>
+    <h4>PersonViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @Html.HiddenFor(model => model.Id)
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AdditionalInfo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AdditionalInfo)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Édition", "Edit", new { id = Model.Id }) |
+    <a asp-action="Index">Retour à la liste</a>
+</div>

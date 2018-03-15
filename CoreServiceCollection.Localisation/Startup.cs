@@ -1,12 +1,10 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel;
 using System.Globalization;
-using System.Linq;
-using CoreServiceCollection.Localisation.Services;
+using AutoMapper;
+using CoreServiceCollection.Core.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Localization;
-using Microsoft.AspNetCore.Mvc.ModelBinding.Metadata;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,6 +25,34 @@ namespace CoreServiceCollection.Localisation
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.AddResponseCompression();
+            //services.AddAntiforgery();
+            //services.AddAuthentication();
+            //services.AddMemoryCache();
+            //services.AddApplicationInsightsTelemetry();
+            //services.AddAuthenticationCore();
+            //services.AddAuthorization();
+            //services.AddAuthorizationPolicyEvaluator();
+            //services.AddCors();
+            //services.AddDataProtection();
+            //services.AddDirectoryBrowser();
+            //services.AddDistributedMemoryCache();
+            //services.AddDistributedRedisCache();
+            //services.AddDistributedSqlServerCache();
+            //services.AddIdentity<>();
+            //services.AddIdentityCore<>();
+            //services.AddLogging();
+            //services.AddMiddlewareAnalysis();
+            //services.AddNodeServices();
+            //services.AddOptions();
+            //services.AddRemoteScheme<>();
+            //services.AddResponseCaching();
+            //services.AddRouting();
+            //services.AddSpaPrerenderer();
+            //services.AddWebEncoders();
+            //services.AddSession();
+
+            services.AddAutoMapper();
             services.AddSingleton<IPersonService, PersonService>();
 
             services.AddLocalization(AddLocalizationOption);
@@ -54,9 +80,7 @@ namespace CoreServiceCollection.Localisation
             {
                 o.ResourcesPath = "Resources";
             }
-
-            
-    }
+        }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -82,18 +106,6 @@ namespace CoreServiceCollection.Localisation
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-        }
-    }
-
-    public class DisplayNameDetailsProvider : IDisplayMetadataProvider
-    {
-        public void CreateDisplayMetadata(DisplayMetadataProviderContext context)
-        {
-            var displayAttribute = context.Attributes.OfType<DisplayNameAttribute>().FirstOrDefault();
-            if (displayAttribute != null)
-            {
-                context.DisplayMetadata.DisplayName = () => displayAttribute.DisplayName;
-            }
         }
     }
 }
