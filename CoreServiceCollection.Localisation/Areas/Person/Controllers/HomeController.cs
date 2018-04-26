@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using CoreServiceCollection.Core.Models;
 using CoreServiceCollection.Core.Services;
+using CoreServiceCollection.Domain.Models;
 using CoreServiceCollection.Localisation.Areas.Person.Models;
 using Microsoft.AspNetCore.Mvc;
 using IMapper = AutoMapper.IMapper;

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CoreServiceCollection.Core.Models
+namespace CoreServiceCollection.Domain.Models
 {
     public class PersonModel
     {

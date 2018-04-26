@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CoreServiceCollection.Core.Models;
+using CoreServiceCollection.Domain.Models;
 using CoreServiceCollection.Localisation.Areas.Person.Models;
 
 namespace CoreServiceCollection.Localisation.Models

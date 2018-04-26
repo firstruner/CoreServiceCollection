@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using CoreServiceCollection.Core.Models;
+using CoreServiceCollection.Domain.Models;
 
 namespace CoreServiceCollection.Core.Services
 {

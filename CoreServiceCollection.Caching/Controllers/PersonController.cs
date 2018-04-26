@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using CoreServiceCollection.Caching.Models;
-using CoreServiceCollection.Core.Models;
 using CoreServiceCollection.Core.Services;
+using CoreServiceCollection.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using IMapper = AutoMapper.IMapper;
@@ -34,11 +34,8 @@ namespace CoreServiceCollection.Caching.Controllers
 
         public ActionResult Cached()
         {
-            
             var persons = _mapper.Map<IList<PersonViewModel>>(_personService.Persons);
             persons.ToList().ForEach(p => { _memoryCache.Set(p.Id.ToString(), p); });
-
-            
             
             return View(persons);
         }

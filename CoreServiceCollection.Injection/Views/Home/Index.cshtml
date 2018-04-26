@@ -1,0 +1,46 @@
+﻿@using CoreServiceCollection.Core.Services
+@model IndexViewModel
+@inject IIdentifierServiceScoped IdentifierServiceScoped
+
+@{
+    ViewData["Title"] = "Page d'accueil";
+}
+
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+<br/>
+
+<div>
+    <div class="row">
+        <div class="col-md-3">Scoped id from constructor</div>
+        <div class="col-md-4">@Model.ScopedId</div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">Scoped id from method</div>
+        <div class="col-md-4">@Model.OtherScopedId</div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">Scoped id from view</div>
+        <div class="col-md-4">@IdentifierServiceScoped.Id</div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">Transient id from constructor</div>
+        <div class="col-md-4">@Model.TransientId</div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">Transient id from method</div>
+        <div class="col-md-4">@Model.OtherTransientId</div>
+    </div>
+</div>
+
+<br/>
+<address>
+    1200 St-Martin Ouest<br />
+    Laval, QC<br />
+</address>
+
+<address>
+    <strong>Bruno:</strong> <a href="mailto:bruno@bracketshow.com">bruno@bracketshow.com</a><br />
+    <strong>Eric:</strong> <a href="mailto:eric@bracketshow.com">eric@bracketshow.com</a>
+</address>

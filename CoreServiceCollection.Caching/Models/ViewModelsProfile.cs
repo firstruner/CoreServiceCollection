@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CoreServiceCollection.Core.Models;
+using CoreServiceCollection.Domain.Models;
 
 namespace CoreServiceCollection.Caching.Models
 {
