@@ -11,7 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreServiceCollection.Core"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreServiceCollection.Injection", "CoreServiceCollection.Injection\CoreServiceCollection.Injection.csproj", "{8002A44C-ECF8-4E0A-A865-EE60FBE00246}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreServiceCollection.Domain", "CoreServiceCollection.Domain\CoreServiceCollection.Domain.csproj", "{7220DE7A-CD4D-4FC7-9366-217BB3E3BAA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreServiceCollection.Domain", "CoreServiceCollection.Domain\CoreServiceCollection.Domain.csproj", "{7220DE7A-CD4D-4FC7-9366-217BB3E3BAA5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Localization", "Localization", "{0912BDE7-77B6-44D4-9B9F-61DC6BF256A9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Caching", "Caching", "{AE4CAD0D-0B78-4132-BE46-2E589B457B81}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Injection", "Injection", "{61872B5A-0B9D-463A-857D-EA5721692FF1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +48,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AA1C9F09-2450-4297-BD97-ADEB122718B0} = {0912BDE7-77B6-44D4-9B9F-61DC6BF256A9}
+		{D3DE27CE-341D-4610-A610-4982BEA81751} = {AE4CAD0D-0B78-4132-BE46-2E589B457B81}
+		{8002A44C-ECF8-4E0A-A865-EE60FBE00246} = {61872B5A-0B9D-463A-857D-EA5721692FF1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2C7B54BA-094F-409D-9BAC-D88F35C8C3A8}
