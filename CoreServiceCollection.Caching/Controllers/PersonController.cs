@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AutoMapper;
 using CoreServiceCollection.Caching.Models;
 using CoreServiceCollection.Core.Services;
 using CoreServiceCollection.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
-using IMapper = AutoMapper.IMapper;
 
 namespace CoreServiceCollection.Caching.Controllers
 {
